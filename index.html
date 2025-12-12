@@ -937,11 +937,13 @@ setInterval(updateCurrentVisitor, 20000);
 </script>
 
 <script>
-/* ============================
-        SERVER CLOCK
-============================ */
+// ============================
+//        SERVER CLOCK FIX
+// ============================
+
 let serverTimeOffset = 0;
 
+// Ambil waktu server dari header
 fetch(location.href, { method: "HEAD" })
     .then(res => {
         const d = res.headers.get("Date");
@@ -950,14 +952,18 @@ fetch(location.href, { method: "HEAD" })
 
 function updateServerClock() {
     const now = new Date(Date.now() + serverTimeOffset);
-    document.getElementById("serverTime").textContent =
-        now.toISOString().substr(11, 8);
+
+    let h = now.getHours().toString().padStart(2, "0");
+    let m = now.getMinutes().toString().padStart(2, "0");
+    let s = now.getSeconds().toString().padStart(2, "0");
+
+    document.getElementById("serverTime").textContent = `${h}:${m}:${s}`;
 }
+
 setInterval(updateServerClock, 1000);
 updateServerClock();
 </script>
 
-<script>
 /* ============================
         SERVER DATE
 ============================ */
@@ -980,6 +986,7 @@ updateServerDate();
 
 </body>
 </html>
+
 
 
 
