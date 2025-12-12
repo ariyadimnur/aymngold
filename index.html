@@ -784,130 +784,98 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <!-- Scripts -->
   <script>
-    /* Form open/close */
-    function openForm() {
-  const order = document.getElementById('order');
-  const btn = document.getElementById('btnBukaForm');
+/* ============================
+      FORM OPEN / CLOSE
+============================ */
+function openForm() {
+    const order = document.getElementById('order');
+    const btn = document.getElementById('btnBukaForm');
 
-  if (order && btn) {
-
-    // Tampilkan form dulu
     order.style.display = 'block';
     btn.style.display = 'none';
 
-    // Hentikan perilaku scroll otomatis browser (loncat ke bawah)
+    // Smooth scroll tanpa loncat
     setTimeout(() => {
-      order.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }, 50); // jeda kecil agar form sudah muncul dulu
-  }
+        order.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 20);
 }
-    function closeForm() {
-      const order = document.getElementById('order');
-      const btn = document.getElementById('btnBukaForm');
-      if (order && btn) {
-        order.style.display = 'none';
-        btn.style.display = 'block';
-        window.scrollTo({ top: document.body.scrollHeight - 900, behavior: "smooth" });
-      }
-    }
 
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const f = e.target;
-      const text =
+function closeForm() {
+    const order = document.getElementById('order');
+    const btn = document.getElementById('btnBukaForm');
+    order.style.display = 'none';
+    btn.style.display = 'block';
+}
+
+function handleFormSubmit(e) {
+    e.preventDefault();
+    const f = e.target;
+    const text =
         "Pemesanan / Konsultasi AYMN Gold%0A" +
         "Nama: " + encodeURIComponent(f.name.value) + "%0A" +
         "WA: " + encodeURIComponent(f.phone.value) + "%0A" +
         "Berat: " + encodeURIComponent(f.weight.value) + " gram%0A" +
         "Jenis: " + encodeURIComponent(f.type.value) + "%0A" +
         "Catatan: " + encodeURIComponent(f.notes.value);
-      window.open("https://wa.me/628987074600?text=" + text, "_blank");
-      f.reset();
-      closeForm();
-    }
-  </script>
 
-  <script>
-    
-  /* FAQ interactive handler (accessible + responsive) */
-  (function () {
-
-    const faqItems = document.querySelectorAll('.faq-royal .faq-item');
-    if (!faqItems || faqItems.length === 0) return;
-
-    faqItems.forEach(btn => {
-
-      const ans = btn.querySelector('.a');
-
-      // Inisialisasi default
-      ans.hidden = true;
-      btn.setAttribute('aria-expanded', 'false');
-
-      // Aksesibilitas
-      ans.setAttribute('role', 'region');
-      ans.setAttribute('aria-hidden', 'true');
-      btn.setAttribute('tabindex', '0');
-
-      // Fungsi Toggle (Accordion)
-      const toggle = () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-
-        // Tutup semua FAQ lain
-        document.querySelectorAll('.faq-royal .faq-item').forEach(other => {
-          if (other !== btn) {
-            other.setAttribute('aria-expanded', 'false');
-            const otherAns = other.querySelector('.a');
-            if (otherAns) {
-              otherAns.hidden = true;
-              otherAns.setAttribute('aria-hidden', 'true');
-            }
-          }
-        });
-
-        // Buka / Tutup item ini
-        if (!expanded) {
-          btn.setAttribute('aria-expanded', 'true');
-          ans.hidden = false;
-          ans.setAttribute('aria-hidden', 'false');
-
-          // Responsif: auto scroll saat di HP
-          if (window.innerWidth < 700) {
-            btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-
-        } else {
-          btn.setAttribute('aria-expanded', 'false');
-          ans.hidden = true;
-          ans.setAttribute('aria-hidden', 'true');
-        }
-      };
-
-      // Klik
-      btn.addEventListener('click', toggle);
-
-      // Keyboard Enter/Space
-      btn.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggle();
-        }
-      });
-
-    });
-
-  })();
+    window.open("https://wa.me/628987074600?text=" + text, "_blank");
+    f.reset();
+    closeForm();
+}
 </script>
 
-<!-- Visitor Script -->
- <style>
-/* Visitor Box Style */
+<script>
+/* ============================
+        FAQ ACCORDION
+============================ */
+document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll('.faq-royal .faq-item');
+    faqItems.forEach(item => {
+        const ans = item.querySelector('.a');
+        ans.hidden = true;
+        item.setAttribute('aria-expanded', 'false');
+
+        const toggle = () => {
+            const expanded = item.getAttribute('aria-expanded') === 'true';
+
+            // Tutup lain
+            faqItems.forEach(other => {
+                if (other !== item) {
+                    other.setAttribute('aria-expanded', 'false');
+                    const a = other.querySelector('.a');
+                    a.hidden = true;
+                }
+            });
+
+            if (!expanded) {
+                item.setAttribute('aria-expanded', 'true');
+                ans.hidden = false;
+                if (innerWidth < 700) item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                item.setAttribute('aria-expanded', 'false');
+                ans.hidden = true;
+            }
+        };
+
+        item.addEventListener('click', toggle);
+        item.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle();
+            }
+        });
+    });
+});
+</script>
+
+<style>
+/* ============================
+        VISITOR BOX STYLE
+============================ */
 #visitorBox {
     text-align:center;
     padding:14px;
-    margin-top:15px;
+    margin-top:15px !important;
     background:linear-gradient(135deg, rgba(255,215,100,0.25), rgba(70,50,0,0.25));
     border:1px solid rgba(255,215,100,0.4);
     border-radius:14px;
@@ -924,140 +892,86 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 
 <script>
-// ===============================
-//     VISITOR SYSTEM FINAL
-// ===============================
-
-// ==== 1. Manual Total Visitor Awal ====
-let manualTotal = 15420;   // EDIT TOTAL VISITOR DI SINI
-
-// ==== 2. Load total visitor dari storage ====
+/* ============================
+        VISITOR SYSTEM
+============================ */
+let manualTotal = 15420;
 let totalVisitor = parseInt(localStorage.getItem("totalVisitor") || manualTotal);
+let currentShown = 0;
 
-// ==== 3. Auto increase per hari ====
+// Tambah visitor harian
 function autoIncreaseDaily() {
-    const lastDate = localStorage.getItem("visit_date");
+    const last = localStorage.getItem("visit_date");
     const today = new Date().toDateString();
-
-    if (lastDate !== today) {
-        // Tambah visitor random 10–60 per hari
-        const add = Math.floor(Math.random() * 50) + 10;
-        totalVisitor += add;
-
+    if (last !== today) {
+        totalVisitor += Math.floor(Math.random() * 50) + 10;
         localStorage.setItem("visit_date", today);
         localStorage.setItem("totalVisitor", totalVisitor);
     }
-
     document.getElementById("totalVisitor").textContent = totalVisitor;
 }
 
-// ==== 4. Animasi angka halus ====
-function animateNumber(element, start, end, duration = 700) {
+function animateNumber(el, start, end, duration = 700) {
     const range = end - start;
     let startTime = null;
-
-    function animation(time) {
-        if (!startTime) startTime = time;
-        const progress = Math.min((time - startTime) / duration, 1);
-        element.textContent = Math.floor(start + range * progress);
-        if (progress < 1) requestAnimationFrame(animation);
+    function anim(t) {
+        if (!startTime) startTime = t;
+        const progress = Math.min((t - startTime) / duration, 1);
+        el.textContent = Math.floor(start + range * progress);
+        if (progress < 1) requestAnimationFrame(anim);
     }
-    requestAnimationFrame(animation);
+    requestAnimationFrame(anim);
 }
 
-// ==== 5. Random pengunjung realtime ====
-let currentShown = 0;
-
 function updateCurrentVisitor() {
-    const min = 10;
-    const max = 50;
-
-    const next = Math.floor(Math.random() * (max - min + 1) + min);
-
+    const min = 10, max = 50;
+    const next = Math.floor(Math.random() * (max - min + 1)) + min;
     const el = document.getElementById("currentVisitor");
     animateNumber(el, currentShown, next, 800);
     currentShown = next;
 }
 
-// ==== 6. Eksekusi awal ====
 autoIncreaseDaily();
 updateCurrentVisitor();
-
-// ==== 7. Update otomatis tiap 20 detik ====
 setInterval(updateCurrentVisitor, 20000);
-
 </script>
-<!-- Script visitor end -->
 
-<!-- Time Real -->
- <script>
-// ===============================
-//        SERVER TIME REALTIME
-// ===============================
-
-// Ambil waktu server dari Date header response
+<script>
+/* ============================
+        SERVER CLOCK
+============================ */
 let serverTimeOffset = 0;
 
-fetch(document.location.href, { method: "HEAD" })
+fetch(location.href, { method: "HEAD" })
     .then(res => {
-        const serverDate = res.headers.get("Date");
-        if (serverDate) {
-            const serverNow = new Date(serverDate).getTime();
-            const localNow = new Date().getTime();
-            serverTimeOffset = serverNow - localNow;
-        }
-    })
-    .catch(() => {});
+        const d = res.headers.get("Date");
+        if (d) serverTimeOffset = new Date(d).getTime() - Date.now();
+    });
 
-// Fungsi update jam realtime
 function updateServerClock() {
-    const now = new Date(new Date().getTime() + serverTimeOffset);
-
-    let h = now.getHours().toString().padStart(2, "0");
-    let m = now.getMinutes().toString().padStart(2, "0");
-    let s = now.getSeconds().toString().padStart(2, "0");
-
-    document.getElementById("serverTime").textContent = `${h}:${m}:${s}`;
+    const now = new Date(Date.now() + serverTimeOffset);
+    document.getElementById("serverTime").textContent =
+        now.toISOString().substr(11, 8);
 }
-
-// Update tiap detik
 setInterval(updateServerClock, 1000);
 updateServerClock();
 </script>
- <!-- Time end -->
 
- <!-- date star -->
-  <script>
-// =====================================
-//          SERVER DATE REALTIME
-// =====================================
-
-// Menggunakan serverTimeOffset yang sudah ada dari script jam
-
+<script>
+/* ============================
+        SERVER DATE
+============================ */
 function updateServerDate() {
-    const now = new Date(new Date().getTime() + serverTimeOffset);
-
-    // Format: Senin, 27 Januari 2025
+    const now = new Date(Date.now() + serverTimeOffset);
     const days = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
-    const months = [
-        "Januari","Februari","Maret","April","Mei","Juni",
-        "Juli","Agustus","September","Oktober","November","Desember"
-    ];
-
-    const dayName = days[now.getDay()];
-    const day = now.getDate();
-    const month = months[now.getMonth()];
-    const year = now.getFullYear();
-
-    const formattedDate = `${dayName}, ${day} ${month} ${year}`;
-
-    document.getElementById("serverDate").textContent = formattedDate;
+    const months = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+    document.getElementById("serverDate").textContent =
+        `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
 }
-
-// Update tiap 1 menit (cukup)
 setInterval(updateServerDate, 60000);
 updateServerDate();
 </script>
+
   <!-- date end -->
 
   <!-- Style Jarak -->
@@ -1066,5 +980,4 @@ updateServerDate();
 
 </body>
 </html>
-
 
