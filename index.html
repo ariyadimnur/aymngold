@@ -924,7 +924,7 @@ function animateNumber(el, start, end, duration = 700) {
 }
 
 function updateCurrentVisitor() {
-    const min = 10, max = 20;
+    const min = 1, max = 10;
     const next = Math.floor(Math.random() * (max - min + 1)) + min;
     const el = document.getElementById("currentVisitor");
     animateNumber(el, currentShown, next, 800);
@@ -980,5 +980,6 @@ updateServerDate();
 
 </body>
 </html>
+
 
 
