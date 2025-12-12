@@ -271,7 +271,28 @@
       .liquid-gold, .nav-royal .nav-royal-title { animation:none; }
       .faq-royal .chev, .faq-royal .a { transition:none; }
     }
+
+/* Visitor */
+    #visitorBox {
+    text-align:center;
+    padding:14px;
+    margin-top:15px;
+    background:linear-gradient(135deg, rgba(255,215,100,0.25), rgba(70,50,0,0.25));
+    border:1px solid rgba(255,215,100,0.4);
+    border-radius:14px;
+    color:#f5d769;
+    backdrop-filter: blur(6px);
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+#visitorBox:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 12px rgba(255,215,100,0.3);
+}
+
   </style>
+  
 </head>
 <body>
   <!-- NAVBAR ROYAL DIAMOND EDITION -->
@@ -306,7 +327,7 @@
       <h2>Kenapa Pilih Layanan Kami?</h2>
       <div class="why-grid">
         <div class="gold-card"><h3 style="margin:0; color:var(--gold);">Harga Terbaik!!!</h3><p>Kami membeli emas anda dengan harga terbaik di Bandung – Cimahi.</p></div>
-        <div class="gold-card"><h3 style="margin:0; color:var(--gold);">Menerima Emas Perhiasan?</h3><p>Betul Kami menerima Emas Jadul, Emas Patah atau rusak, Emas Tanpa Surat karena hilang dan lain-lain dikami.</p></div>
+        <div class="gold-card"><h3 style="margin:0; color:var(--gold);">Menerima Emas</h3><p>Kami menerima Emas Jadul, Emas Patah atau rusak, Emas Tanpa Surat karena hilang dan lain-lain di Kami saja.</p></div>
         <div class="gold-card"><h3 style="margin:0; color:var(--gold);">Proses Cepat</h3><p>Hitungan menit langsung selesai, tanpa ribet.</p></div>
         <div class="gold-card"><h3 style="margin:0; color:var(--gold);">Aman & Terpercaya</h3><p>Transaksi aman, Transparan, Tanpa ada potongan ini itu, sudah melayani banyak pelanggan.</p></div>
         <div class="gold-card"><h3 style="margin:0; color:var(--gold);">Gratis Cek Emas</h3><p>Kami bantu cek kadar emas Anda secara gratis.</p></div>
@@ -325,7 +346,7 @@
     </section>
 
     <!-- CONSULTATION BUTTON -->
-    <button id="btnBukaForm" onclick="openForm()" class="gold-btn" style="width:100%; max-width:340px; margin:20px auto; display:block; font-size:18px;">KONSULTASI</button>
+    <button id="btnBukaForm" onclick="openForm()" class="gold-btn" style="width:100%; max-width:340px; margin:20px auto; display:block; font-size:18px;">KLIK UNTUK KONSULTASI</button>
 
     <!-- FORM (HIDDEN) -->
     <div id="order" style="display:none;">
@@ -389,7 +410,7 @@
               <span>Apakah menerima emas tanpa surat?</span>
               <svg class="chev" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
             </div>
-            <div class="a" hidden>Iya, Kami bisa menerima emas tanpa surat selama kadar emas dapat diverifikasi melalui pengecekan sama kami.</div>
+            <div class="a" hidden>Kami menerima emas tanpa surat selama kadar emas dapat diverifikasi melalui pengecekan profesional kami.</div>
           </button>
 
           <button class="faq-item" aria-expanded="false" role="listitem">
@@ -402,15 +423,15 @@
 
           <button class="faq-item" aria-expanded="false" role="listitem">
             <div class="q">
-              <span>Apakah bisa dijemput ke lokasi?</span>
+              <span>Apakah bisa datang ke lokasi?</span>
               <svg class="chev" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
             </div>
-            <div class="a" hidden>Bisa. Silakan janji via WhatsApp agar kami bisa menjadwalkan untuk menjemput ke lokasi anda.</div>
+            <div class="a" hidden>Bisa. Silakan janji via WhatsApp agar kami siapkan ruang transaksi aman dan nyaman.</div>
           </button>
 
           <button class="faq-item" aria-expanded="false" role="listitem">
             <div class="q">
-              <span>Jam operasional Kami?</span>
+              <span>Jam operasional AYMN Gold?</span>
               <svg class="chev" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
             </div>
             <div class="a" hidden>Weekday 15:00–22:00; Weekend 07:00–22:00.</div>
@@ -418,6 +439,342 @@
         </div>
       </div>
     </section>
+
+    <!-- TESTIMONIALS SECTION -->
+<section class="fade" style="margin:50px auto; max-width:1080px; padding:0 12px;">
+  <h2 style="text-align:center; color:var(--gold); margin-bottom:24px;">Apa Kata Pelanggan Kami?</h2>
+
+  <div class="testimonial-slider" style="position:relative; overflow:hidden; border-radius:16px; min-height:150px;">
+    
+    <!-- Slides -->
+    <div class="slide gold-border active">
+      <p>AYMN Gold selalu memberikan harga terbaik, cepat dan aman.</p>
+      <div class="gold-underline"></div>
+    </div>
+
+    <div class="slide gold-border">
+      <p>Proses pengecekan emas sangat teliti dan transparan.</p>
+      <div class="gold-underline"></div>
+    </div>
+
+    <div class="slide gold-border">
+      <p>Pelayanan ramah, cepat, dan membuat saya nyaman bertransaksi.</p>
+      <div class="gold-underline"></div>
+    </div>
+
+    <div class="slide gold-border">
+      <p>Harga emas yang ditawarkan selalu lebih tinggi dari tempat lain.</p>
+      <div class="gold-underline"></div>
+    </div>
+
+    <div class="slide gold-border">
+      <p>Tim AYMN Gold profesional dan selalu siap membantu kapan saja.</p>
+      <div class="gold-underline"></div>
+    </div>
+
+    <div class="slide gold-border">
+      <p>Mudah konsultasi, proses jual emas cepat dan aman.</p>
+      <div class="gold-underline"></div>
+    </div>
+
+    <div class="slide gold-border">
+      <p>Selalu transparan, tidak ada potongan, sangat memuaskan.</p>
+      <div class="gold-underline"></div>
+    </div>
+
+    <div class="slide gold-border">
+      <p>Kualitas pelayanan terbaik, saya selalu kembali untuk transaksi emas.</p>
+      <div class="gold-underline"></div>
+    </div>
+
+    <div class="slide gold-border">
+      <p>Bisa dijemput ke Lokasi nyaman, aman, dan transaksi selalu cepat selesai.</p>
+      <div class="gold-underline"></div>
+    </div>
+
+    <div class="slide gold-border">
+      <p>AYMN Gold rekomendasi terbaik untuk jual emas di Bandung.</p>
+      <div class="gold-underline"></div>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots" style="text-align:center; margin-top:22px;"></div>
+  </div>
+</section>
+
+
+<style>
+  /* SLIDES BASE */
+.testimonial-slider .slide {
+  position: absolute;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.8s ease-in-out;
+}
+
+.testimonial-slider .slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+/* TEXT */
+.testimonial-slider .slide p {
+  font-size: 1.15rem;
+  color: #f7e9c4;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.testimonial-slider .slide.active p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* GOLD UNDERLINE */
+.testimonial-slider .gold-underline {
+  height: 3px;
+  background: linear-gradient(90deg, #f5d769, #b78a2a);
+  width: 0;
+  margin-top: 12px;
+  border-radius: 3px;
+  transition: width 1s ease;
+}
+
+.testimonial-slider .slide.active .gold-underline {
+  width: 80%;
+}
+
+/* DOTS */
+.dots .dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #666;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dots .dot.active {
+  background: #f5d769;
+  transform: scale(1.25);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .testimonial-slider .slide { padding: 18px; }
+  .testimonial-slider .slide p { font-size: 1rem; }
+}
+
+
+   /* FAQ Luxury */
+.faq-royal .faq-item {
+  background: rgba(20,20,20,0.6);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(245,215,105,0.25);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  position: relative;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+.faq-royal .faq-item:hover {
+  border-color: rgba(255,230,140,0.55);
+  background: rgba(25,25,25,0.8);
+}
+
+/* Gold Arrow */
+.faq-royal .faq-item::after {
+  content: "▸";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  color: #f5d769;
+  font-size: 20px;
+  transition: transform 0.35s ease;
+  pointer-events: none;
+}
+
+.faq-royal .faq-item[aria-expanded="true"]::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Jawaban */
+.faq-royal .faq-item .a {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  transition:
+    max-height 0.45s ease,
+    opacity 0.45s ease,
+    padding-top 0.3s ease;
+}
+
+/* Saat terbuka */
+.faq-royal .faq-item[aria-expanded="true"] .a {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.separator-glow {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f5d769;
+    text-shadow: 0 0 6px rgba(255,215,100,0.8),
+                 0 0 12px rgba(255,215,100,0.5);
+    animation: glowPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 4px rgba(255,215,100,0.6); }
+    50% { text-shadow: 0 0 10px rgba(255,215,100,1); }
+    100% { text-shadow: 0 0 4px rgba(255,215,100,0.6); }
+}
+
+</style>
+
+<!-- Date start -->
+ <div id="serverDateBox" style="
+    text-align:center;
+    margin-top:10px;
+    padding:10px;
+    background:rgba(20,20,20,0.6);
+    color:#f5d769;
+    border-radius:12px;
+    border:1px solid rgba(255,215,100,0.35);
+    font-weight:600;
+    letter-spacing:0.5px;
+">
+    <span id="serverDate">Loading...</span>
+</div>
+
+ <!-- Date end -->
+
+<!-- Time Box -->
+ <div id="serverTimeBox" style="
+    text-align:center;
+    margin-top:10px;
+    padding:10px;
+    background:rgba(20,20,20,0.6);
+    color:#f5d769;
+    border-radius:12px;
+    border:1px solid rgba(255,215,100,0.35);
+    font-weight:600;
+    letter-spacing:0.5px;
+">
+    <span id="serverTime">00:00:00</span>
+</div>
+
+ <!-- Time end -->
+
+ <!-- Visitor start -->
+<div id="visitorBox" style="
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    text-align:center;
+    padding:14px;
+    margin-top:15px;
+    background:linear-gradient(135deg, rgba(255,215,100,0.25), rgba(70,50,0,0.25));
+    border:1px solid rgba(255,215,100,0.4);
+    border-radius:14px;
+    color:#f5d769;
+    backdrop-filter: blur(6px);
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+">
+    <span>Total Visitor: <b id="totalVisitor">0</b></span>
+
+    <!-- Garis pemisah glow -->
+    <span class="separator-glow">|</span>
+
+    <span>Online: <b id="currentVisitor">0</b></span>
+</div>
+
+<style>
+.separator-glow {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f5d769;
+    text-shadow: 
+        0 0 6px rgba(255,215,100,0.8),
+        0 0 12px rgba(255,215,100,0.5),
+        0 0 20px rgba(255,215,100,0.4);
+    animation: glowPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 4px rgba(255,215,100,0.6); }
+    50% { text-shadow: 0 0 14px rgba(255,215,100,1); }
+    100% { text-shadow: 0 0 4px rgba(255,215,100,0.6); }
+}
+</style>
+<!-- Visitor end -->
+
+<!-- Script testimoni -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".testimonial-slider .slide");
+  const dotsContainer = document.querySelector(".dots");
+  let index = 0;
+
+  // Create dots automatically
+  slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  function showSlide(i) {
+    slides.forEach((slide, idx) => {
+      slide.classList.remove("active");
+      dots[idx].classList.remove("active");
+
+      if (idx === i) {
+        slide.classList.add("active");
+        dots[idx].classList.add("active");
+      }
+    });
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+
+  function goToSlide(i) {
+    index = i;
+    showSlide(index);
+  }
+
+  // Auto Play
+  let autoPlay = setInterval(nextSlide, 3500);
+
+  // Pause on hover
+  const slider = document.querySelector(".testimonial-slider");
+  slider.addEventListener("mouseenter", () => clearInterval(autoPlay));
+  slider.addEventListener("mouseleave", () => autoPlay = setInterval(nextSlide, 3500));
+});
+</script>
+<!-- Akhir Testimoni -->
 
   </main>
 
@@ -429,14 +786,24 @@
   <script>
     /* Form open/close */
     function openForm() {
-      const order = document.getElementById('order');
-      const btn = document.getElementById('btnBukaForm');
-      if (order && btn) {
-        order.style.display = 'block';
-        btn.style.display = 'none';
-        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-      }
-    }
+  const order = document.getElementById('order');
+  const btn = document.getElementById('btnBukaForm');
+
+  if (order && btn) {
+
+    // Tampilkan form dulu
+    order.style.display = 'block';
+    btn.style.display = 'none';
+
+    // Hentikan perilaku scroll otomatis browser (loncat ke bawah)
+    setTimeout(() => {
+      order.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 50); // jeda kecil agar form sudah muncul dulu
+  }
+}
     function closeForm() {
       const order = document.getElementById('order');
       const btn = document.getElementById('btnBukaForm');
@@ -464,49 +831,238 @@
   </script>
 
   <script>
-    /* FAQ interactive handler (accessible) */
-    (function(){
-      const faqItems = document.querySelectorAll('.faq-royal .faq-item');
-      if (!faqItems || faqItems.length === 0) return;
+    
+  /* FAQ interactive handler (accessible + responsive) */
+  (function () {
 
-      faqItems.forEach(btn => {
-        const ans = btn.querySelector('.a');
-        // accessibility attributes
-        ans.setAttribute('role','region');
-        ans.setAttribute('aria-hidden','true');
-        btn.setAttribute('tabindex','0');
+    const faqItems = document.querySelectorAll('.faq-royal .faq-item');
+    if (!faqItems || faqItems.length === 0) return;
 
-        // toggle function
-        const toggle = () => {
-          const expanded = btn.getAttribute('aria-expanded') === 'true';
-          // close any other open (accordion behavior)
-          document.querySelectorAll('.faq-royal .faq-item[aria-expanded="true"]').forEach(openBtn => {
-            openBtn.setAttribute('aria-expanded','false');
-            const openAns = openBtn.querySelector('.a');
-            if (openAns) { openAns.setAttribute('aria-hidden','true'); openAns.hidden = true; }
-          });
-          // open this (if was closed)
-          if (!expanded) {
-            btn.setAttribute('aria-expanded','true');
-            ans.hidden = false;
-            ans.setAttribute('aria-hidden','false');
-            if (window.innerWidth < 700) btn.scrollIntoView({behavior:'smooth', block:'center'});
-          } else {
-            btn.setAttribute('aria-expanded','false');
-            ans.setAttribute('aria-hidden','true');
-            ans.hidden = true;
+    faqItems.forEach(btn => {
+
+      const ans = btn.querySelector('.a');
+
+      // Inisialisasi default
+      ans.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+
+      // Aksesibilitas
+      ans.setAttribute('role', 'region');
+      ans.setAttribute('aria-hidden', 'true');
+      btn.setAttribute('tabindex', '0');
+
+      // Fungsi Toggle (Accordion)
+      const toggle = () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+        // Tutup semua FAQ lain
+        document.querySelectorAll('.faq-royal .faq-item').forEach(other => {
+          if (other !== btn) {
+            other.setAttribute('aria-expanded', 'false');
+            const otherAns = other.querySelector('.a');
+            if (otherAns) {
+              otherAns.hidden = true;
+              otherAns.setAttribute('aria-hidden', 'true');
+            }
           }
-        };
-
-        btn.addEventListener('click', toggle);
-        btn.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
         });
+
+        // Buka / Tutup item ini
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          ans.hidden = false;
+          ans.setAttribute('aria-hidden', 'false');
+
+          // Responsif: auto scroll saat di HP
+          if (window.innerWidth < 700) {
+            btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+
+        } else {
+          btn.setAttribute('aria-expanded', 'false');
+          ans.hidden = true;
+          ans.setAttribute('aria-hidden', 'true');
+        }
+      };
+
+      // Klik
+      btn.addEventListener('click', toggle);
+
+      // Keyboard Enter/Space
+      btn.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
       });
-    })();
-  </script>
+
+    });
+
+  })();
+</script>
+
+<!-- Visitor Script -->
+ <style>
+/* Visitor Box Style */
+#visitorBox {
+    text-align:center;
+    padding:14px;
+    margin-top:15px;
+    background:linear-gradient(135deg, rgba(255,215,100,0.25), rgba(70,50,0,0.25));
+    border:1px solid rgba(255,215,100,0.4);
+    border-radius:14px;
+    color:#f5d769;
+    backdrop-filter: blur(6px);
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+#visitorBox:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 12px rgba(255,215,100,0.3);
+}
+</style>
+
+<script>
+// ===============================
+//     VISITOR SYSTEM FINAL
+// ===============================
+
+// ==== 1. Manual Total Visitor Awal ====
+let manualTotal = 15420;   // EDIT TOTAL VISITOR DI SINI
+
+// ==== 2. Load total visitor dari storage ====
+let totalVisitor = parseInt(localStorage.getItem("totalVisitor") || manualTotal);
+
+// ==== 3. Auto increase per hari ====
+function autoIncreaseDaily() {
+    const lastDate = localStorage.getItem("visit_date");
+    const today = new Date().toDateString();
+
+    if (lastDate !== today) {
+        // Tambah visitor random 10–60 per hari
+        const add = Math.floor(Math.random() * 50) + 10;
+        totalVisitor += add;
+
+        localStorage.setItem("visit_date", today);
+        localStorage.setItem("totalVisitor", totalVisitor);
+    }
+
+    document.getElementById("totalVisitor").textContent = totalVisitor;
+}
+
+// ==== 4. Animasi angka halus ====
+function animateNumber(element, start, end, duration = 700) {
+    const range = end - start;
+    let startTime = null;
+
+    function animation(time) {
+        if (!startTime) startTime = time;
+        const progress = Math.min((time - startTime) / duration, 1);
+        element.textContent = Math.floor(start + range * progress);
+        if (progress < 1) requestAnimationFrame(animation);
+    }
+    requestAnimationFrame(animation);
+}
+
+// ==== 5. Random pengunjung realtime ====
+let currentShown = 0;
+
+function updateCurrentVisitor() {
+    const min = 10;
+    const max = 50;
+
+    const next = Math.floor(Math.random() * (max - min + 1) + min);
+
+    const el = document.getElementById("currentVisitor");
+    animateNumber(el, currentShown, next, 800);
+    currentShown = next;
+}
+
+// ==== 6. Eksekusi awal ====
+autoIncreaseDaily();
+updateCurrentVisitor();
+
+// ==== 7. Update otomatis tiap 15 detik ====
+setInterval(updateCurrentVisitor, 15000);
+
+</script>
+<!-- Script visitor end -->
+
+<!-- Time Real -->
+ <script>
+// ===============================
+//        SERVER TIME REALTIME
+// ===============================
+
+// Ambil waktu server dari Date header response
+let serverTimeOffset = 0;
+
+fetch(document.location.href, { method: "HEAD" })
+    .then(res => {
+        const serverDate = res.headers.get("Date");
+        if (serverDate) {
+            const serverNow = new Date(serverDate).getTime();
+            const localNow = new Date().getTime();
+            serverTimeOffset = serverNow - localNow;
+        }
+    })
+    .catch(() => {});
+
+// Fungsi update jam realtime
+function updateServerClock() {
+    const now = new Date(new Date().getTime() + serverTimeOffset);
+
+    let h = now.getHours().toString().padStart(2, "0");
+    let m = now.getMinutes().toString().padStart(2, "0");
+    let s = now.getSeconds().toString().padStart(2, "0");
+
+    document.getElementById("serverTime").textContent = `${h}:${m}:${s}`;
+}
+
+// Update tiap detik
+setInterval(updateServerClock, 1000);
+updateServerClock();
+</script>
+ <!-- Time end -->
+
+ <!-- date star -->
+  <script>
+// =====================================
+//          SERVER DATE REALTIME
+// =====================================
+
+// Menggunakan serverTimeOffset yang sudah ada dari script jam
+
+function updateServerDate() {
+    const now = new Date(new Date().getTime() + serverTimeOffset);
+
+    // Format: Senin, 27 Januari 2025
+    const days = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+    const months = [
+        "Januari","Februari","Maret","April","Mei","Juni",
+        "Juli","Agustus","September","Oktober","November","Desember"
+    ];
+
+    const dayName = days[now.getDay()];
+    const day = now.getDate();
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+
+    const formattedDate = `${dayName}, ${day} ${month} ${year}`;
+
+    document.getElementById("serverDate").textContent = formattedDate;
+}
+
+// Update tiap 1 menit (cukup)
+setInterval(updateServerDate, 60000);
+updateServerDate();
+</script>
+  <!-- date end -->
+
+  <!-- Style Jarak -->
+   
+   <!-- style jarak end -->
 
 </body>
 </html>
-
-
