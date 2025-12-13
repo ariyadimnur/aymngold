@@ -30,6 +30,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
+<!-- ======================================================================================= -->
+                                      <!-- AWAL JSON-LD -->
   <!-- JSON-LD LocalBusiness -->
   <script type="application/ld+json">
   {
@@ -85,7 +87,11 @@
     ]
   }
   </script>
-
+  <!-- ======================================================================================= -->
+                                      <!-- AKHIR JSON-LD -->
+<!-- ======================================================================================= -->
+                                      <!-- AWAL STYLE -->
+<!-- ======================================================================================= -->
   <!-- Consolidated CSS -->
   <style>
     :root {
@@ -245,14 +251,7 @@
       .royal-paragraph { font-size:1.05rem; line-height:1.6; }
     }
 
-    /* FAQ styling */
-    .faq-royal { margin:34px auto; max-width:1080px; }
-    .faq-royal .faq-list { display:flex; flex-direction:column; gap:12px; }
-    .faq-royal .faq-item {
-      display:flex; flex-direction:column; gap:8px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px; padding:14px 18px; border:1px solid rgba(255,215,120,0.06); color:#eae7d1; cursor:pointer; overflow:hidden;
-    }
+    /* FAQ Royal Premium Interactive */
     .faq-royal .faq-item .q { font-weight:700; color:var(--gold); font-size:1.05rem; letter-spacing:0.2px; display:flex; align-items:center; justify-content:space-between; }
     .faq-royal .faq-item .a { color:#dcd6c1; font-size:0.99rem; line-height:1.6; max-height:0; opacity:0; transform:translateY(-6px); transition: all .28s ease; overflow:hidden; }
     .faq-royal .chev { color: rgba(255,215,120,0.95); transition: transform .28s ease; margin-left:12px; }
@@ -272,6 +271,145 @@
       .faq-royal .chev, .faq-royal .a { transition:none; }
     }
 
+     /* SLIDES BASE */
+.testimonial-slider .slide {
+  position: absolute;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.8s ease-in-out;
+}
+
+.testimonial-slider .slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+/* TEXT */
+.testimonial-slider .slide p {
+  font-size: 1.15rem;
+  color: #f7e9c4;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.testimonial-slider .slide.active p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* GOLD UNDERLINE */
+.testimonial-slider .gold-underline {
+  height: 3px;
+  background: linear-gradient(90deg, #f5d769, #b78a2a);
+  width: 0;
+  margin-top: 12px;
+  border-radius: 3px;
+  transition: width 1s ease;
+}
+
+.testimonial-slider .slide.active .gold-underline {
+  width: 80%;
+}
+
+/* DOTS */
+.dots .dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #666;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dots .dot.active {
+  background: #f5d769;
+  transform: scale(1.25);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .testimonial-slider .slide { padding: 18px; }
+  .testimonial-slider .slide p { font-size: 1rem; }
+}
+
+
+   /* FAQ Luxury */
+.faq-royal .faq-item {
+  background: rgba(20,20,20,0.6);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(245,215,105,0.25);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  position: relative;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+.faq-royal .faq-item:hover {
+  border-color: rgba(255,230,140,0.55);
+  background: rgba(25,25,25,0.8);
+}
+
+/* Gold Arrow */
+.faq-royal .faq-item::after {
+  content: "▸";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  color: #f5d769;
+  font-size: 20px;
+  transition: transform 0.35s ease;
+  pointer-events: none;
+}
+
+.faq-royal .faq-item[aria-expanded="true"]::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Jawaban */
+.faq-royal .faq-item .a {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  transition:
+    max-height 0.45s ease,
+    opacity 0.45s ease,
+    padding-top 0.3s ease;
+}
+
+/* Saat terbuka */
+.faq-royal .faq-item[aria-expanded="true"] .a {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.separator-glow {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f5d769;
+    text-shadow: 0 0 6px rgba(255,215,100,0.8),
+                 0 0 12px rgba(255,215,100,0.5);
+    animation: glowPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 4px rgba(255,215,100,0.6); }
+    50% { text-shadow: 0 0 10px rgba(255,215,100,1); }
+    100% { text-shadow: 0 0 4px rgba(255,215,100,0.6); }
+}
+
 /* Visitor */
     #visitorBox {
     text-align:center;
@@ -290,11 +428,205 @@
     transform: scale(1.02);
     box-shadow: 0 0 12px rgba(255,215,100,0.3);
 }
+/* Visitor end */
 
+/* Style Clock */
+#neonClock {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+#neonClock span {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #f5d769;
+
+    text-shadow:
+        0 0 4px rgba(255,215,100,0.6),
+        0 0 8px rgba(255,215,100,0.6),
+        0 0 16px rgba(255,215,100,0.45),
+        0 0 28px rgba(255,215,100,0.25);
+
+    animation: neonFlicker 2.5s infinite alternate;
+}
+
+/* Flicker halus, bukan kedap-kedip */
+@keyframes neonFlicker {
+    0%   { opacity: 0.95; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.92; }
+}
+
+/* Mobile lebih kecil */
+@media (max-width: 600px) {
+    #neonClock span {
+        font-size: 16px;
+        letter-spacing: 1.5px;
+    }
+}
+/* Style Clock end */
+
+/* Style Date */
+#neonDate {
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #f5d769;
+}
+
+#neonDate span {
+    text-shadow:
+        0 0 3px rgba(255,215,100,0.6),
+        0 0 6px rgba(255,215,100,0.5),
+        0 0 12px rgba(255,215,100,0.35);
+    animation: neonSoft 2.8s ease-in-out infinite;
+}
+
+/* Sama animasinya dengan jam */
+@keyframes neonSoft {
+    0%   { opacity: 0.92; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.9; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    #neonDate {
+        font-size: 16px;
+        letter-spacing: 0.8px;
+    }
+}
+/* Style Date end */
+
+/* STYLE NOTIF PESAN */
+#socialProof {
+  position: fixed;
+  top: 88px; /* tepat di bawah navbar */
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  z-index: 9999;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  max-width: 340px;
+  padding: 10px 16px;
+
+  background: rgba(15,15,15,0.94);
+  border: 1px solid rgba(245,215,105,0.35);
+  border-radius: 16px;
+
+  font-size: 12px;
+  color: #f5d769;
+
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 10px rgba(245,215,105,0.25),
+    0 0 22px rgba(245,215,105,0.15);
+
+  opacity: 0;
+  transition: all 0.45s ease;
+}
+
+#socialProof.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* WhatsApp icon */
+#socialProof .wa-icon {
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Text container */
+#socialProof .text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Baris utama */
+#socialProof .main-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+
+/* Baris waktu */
+#socialProof .time-text {
+  font-size: 11px;
+  opacity: 0.75;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #socialProof {
+    max-width: 300px;
+    top: 84px;
+  }
+}
+/* STYLE NOTIF END */
+
+/* SUPER RINGAN */
+#socialProofLite {
+  position: fixed;
+  top: 86px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  gap: 6px;
+
+  max-width: 320px;
+  padding: 8px 14px;
+
+  background: #0f0f0f;
+  border: 1px solid #3a2f12;
+  border-radius: 12px;
+
+  font-size: 12px;
+  color: #f5d769;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+#socialProofLite.show {
+  display: flex;
+}
+
+#socialProofLite img {
+  width: 14px;
+  height: 14px;
+}
+
+#socialProofLite small {
+  display: block;
+  font-size: 11px;
+  opacity: 0.75;
+}
   </style>
-  
+<!-- ======================================================================================= -->
+                                      <!-- AKHIR STYLE -->
+<!-- ======================================================================================= -->
 </head>
+
 <body>
+  <!-- ======================================================================================= -->
+                                      <!-- NAVBAR START -->
   <!-- NAVBAR ROYAL DIAMOND EDITION -->
   <nav class="nav-royal" role="navigation" aria-label="Main navigation">
     <img src="logo-aymn-gold.webp" class="nav-royal-logo" loading="lazy" alt="AYMN Gold Logo">
@@ -501,183 +833,19 @@
     <div class="dots" style="text-align:center; margin-top:22px;"></div>
   </div>
 </section>
+<!-- AKHIR TESTIMONIALS SECTION -->
 
-
-<style>
-  /* SLIDES BASE */
-.testimonial-slider .slide {
-  position: absolute;
-  width: 100%;
-  padding: 24px;
-  box-sizing: border-box;
-  opacity: 0;
-  transform: translateX(100%);
-  transition: all 0.8s ease-in-out;
-}
-
-.testimonial-slider .slide.active {
-  opacity: 1;
-  transform: translateX(0);
-  z-index: 2;
-}
-
-/* TEXT */
-.testimonial-slider .slide p {
-  font-size: 1.15rem;
-  color: #f7e9c4;
-  line-height: 1.6;
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.testimonial-slider .slide.active p {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* GOLD UNDERLINE */
-.testimonial-slider .gold-underline {
-  height: 3px;
-  background: linear-gradient(90deg, #f5d769, #b78a2a);
-  width: 0;
-  margin-top: 12px;
-  border-radius: 3px;
-  transition: width 1s ease;
-}
-
-.testimonial-slider .slide.active .gold-underline {
-  width: 80%;
-}
-
-/* DOTS */
-.dots .dot {
-  display: inline-block;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #666;
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.dots .dot.active {
-  background: #f5d769;
-  transform: scale(1.25);
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .testimonial-slider .slide { padding: 18px; }
-  .testimonial-slider .slide p { font-size: 1rem; }
-}
-
-
-   /* FAQ Luxury */
-.faq-royal .faq-item {
-  background: rgba(20,20,20,0.6);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(245,215,105,0.25);
-  border-radius: 14px;
-  padding: 18px 20px;
-  margin-bottom: 14px;
-  cursor: pointer;
-  position: relative;
-  transition: border 0.3s ease, background 0.3s ease;
-}
-
-.faq-royal .faq-item:hover {
-  border-color: rgba(255,230,140,0.55);
-  background: rgba(25,25,25,0.8);
-}
-
-/* Gold Arrow */
-.faq-royal .faq-item::after {
-  content: "▸";
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%) rotate(0deg);
-  color: #f5d769;
-  font-size: 20px;
-  transition: transform 0.35s ease;
-  pointer-events: none;
-}
-
-.faq-royal .faq-item[aria-expanded="true"]::after {
-  transform: translateY(-50%) rotate(90deg);
-}
-
-/* Jawaban */
-.faq-royal .faq-item .a {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  padding-top: 0;
-  transition:
-    max-height 0.45s ease,
-    opacity 0.45s ease,
-    padding-top 0.3s ease;
-}
-
-/* Saat terbuka */
-.faq-royal .faq-item[aria-expanded="true"] .a {
-  max-height: 500px;
-  opacity: 1;
-  padding-top: 10px;
-}
-
-.separator-glow {
-    font-size: 18px;
-    font-weight: bold;
-    color: #f5d769;
-    text-shadow: 0 0 6px rgba(255,215,100,0.8),
-                 0 0 12px rgba(255,215,100,0.5);
-    animation: glowPulse 1.6s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-    0% { text-shadow: 0 0 4px rgba(255,215,100,0.6); }
-    50% { text-shadow: 0 0 10px rgba(255,215,100,1); }
-    100% { text-shadow: 0 0 4px rgba(255,215,100,0.6); }
-}
-
-</style>
-
-<!-- Date start -->
- <div id="serverDateBox" style="
-    text-align:center;
-    margin-top:10px;
-    padding:10px;
-    background:rgba(20,20,20,0.6);
-    color:#f5d769;
-    border-radius:12px;
-    border:1px solid rgba(255,215,100,0.35);
-    font-weight:600;
-    letter-spacing:0.5px;
-">
-    <span id="serverDate">Loading...</span>
+<!-- DATE START -->
+ <div id="neonDate">
+  <span id="serverDate">Loading...</span>
 </div>
+ <!-- DATE END -->
 
- <!-- Date end -->
-
-<!-- Time Box -->
- <div id="serverTimeBox" style="
-    text-align:center;
-    margin-top:10px;
-    padding:10px;
-    background:rgba(20,20,20,0.6);
-    color:#f5d769;
-    border-radius:12px;
-    border:1px solid rgba(255,215,100,0.35);
-    font-weight:600;
-    letter-spacing:0.5px;
-">
-    <span id="serverTime">00:00:00</span>
+<!-- TIME START -->
+ <div id="neonClock">
+  <span id="serverTime">00:00:00</span>
 </div>
-
- <!-- Time end -->
+ <!-- TIME END -->
 
  <!-- Visitor start -->
 <div id="visitorBox" style="
@@ -704,27 +872,17 @@
 
     <span>Online: <b id="currentVisitor">0</b></span>
 </div>
-
-<style>
-.separator-glow {
-    font-size: 18px;
-    font-weight: bold;
-    color: #f5d769;
-    text-shadow: 
-        0 0 6px rgba(255,215,100,0.8),
-        0 0 12px rgba(255,215,100,0.5),
-        0 0 20px rgba(255,215,100,0.4);
-    animation: glowPulse 1.8s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-    0% { text-shadow: 0 0 4px rgba(255,215,100,0.6); }
-    50% { text-shadow: 0 0 14px rgba(255,215,100,1); }
-    100% { text-shadow: 0 0 4px rgba(255,215,100,0.6); }
-}
-</style>
 <!-- Visitor end -->
+  </main>
+<!-- NOTIF PESAN -->
+<div id="socialProof"></div>
+<!-- SUPER RINGAN -->
+ <div id="socialProofLite" aria-live="polite"></div>
 
+
+<!-- ==================================================================================== -->
+                                        <!--AWAL SCRIPT  -->
+<!-- ==================================================================================== -->
 <!-- Script testimoni -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -776,13 +934,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <!-- Akhir Testimoni -->
 
-  </main>
-
-  <footer>
-    © 2025 AYMN Gold · Hak Cipta Dilindungi
-  </footer>
-
-  <!-- Scripts -->
   <script>
 /* ============================
       FORM OPEN / CLOSE
@@ -868,34 +1019,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<style>
-/* ============================
-        VISITOR BOX STYLE
-============================ */
-#visitorBox {
-    text-align:center;
-    padding:14px;
-    margin-top:15px !important;
-    background:linear-gradient(135deg, rgba(255,215,100,0.25), rgba(70,50,0,0.25));
-    border:1px solid rgba(255,215,100,0.4);
-    border-radius:14px;
-    color:#f5d769;
-    backdrop-filter: blur(6px);
-    font-size: 15px;
-    letter-spacing: 0.5px;
-    transition: 0.3s ease;
-}
-#visitorBox:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 12px rgba(255,215,100,0.3);
-}
-</style>
-
 <script>
 /* ============================
         VISITOR SYSTEM
 ============================ */
-let manualTotal = 1;
+let manualTotal = 15420;
 let totalVisitor = parseInt(localStorage.getItem("totalVisitor") || manualTotal);
 let currentShown = 0;
 
@@ -963,7 +1091,7 @@ function updateServerClock() {
 setInterval(updateServerClock, 1000);
 updateServerClock();
 </script>
-  
+
 <script>
 /* ============================
         SERVER DATE
@@ -978,11 +1106,119 @@ function updateServerDate() {
 setInterval(updateServerDate, 60000);
 updateServerDate();
 </script>
+  <!-- date end -->
+
+<!-- NOTIF PESAN -->
+<script>
+(function () {
+  const box = document.getElementById("socialProof");
+
+  const prefixes = ["0811","0812","0813","0815","0816","0821","0822","0823","0851","0852"];
+
+  function randomPhone() {
+    const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+    const tail = Math.floor(1000 + Math.random() * 9000);
+    return `${prefix}****${tail}`;
+  }
+
+  function randomMinutes() {
+    return Math.floor(Math.random() * 7) + 1;
+  }
+
+  function getDelay() {
+    const hour = new Date().getHours();
+
+    // Siang rame
+    if (hour >= 8 && hour < 22) {
+      return Math.floor(Math.random() * 7000) + 8000; // 8–15 detik
+    }
+
+    // Malam sepi
+    return Math.floor(Math.random() * 20000) + 20000; // 20–40 detik
+  }
+
+  function showNotif() {
+    const minutes = randomMinutes();
+
+    box.innerHTML = `
+  <img class="wa-icon"
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp">
+  <div class="text">
+    <div class="main-text">
+      ${randomPhone()} telah melakukan konsultasi
+    </div>
+    <div class="time-text">
+      ${minutes} menit yang lalu
+    </div>
+  </div>
+`;
+
+
+    box.classList.add("show");
+
+    setTimeout(() => {
+      box.classList.remove("show");
+    }, 4500);
+
+    setTimeout(showNotif, getDelay());
+  }
+
+  setTimeout(showNotif, 6000);
+})();
+</script>
+<!-- NOTIF AKHIR -->
+
+<!-- SUPER RINGAN -->
+ <script>
+(function () {
+  const box = document.getElementById("socialProofLite");
+  const phones = ["0815", "0821", "0838", "0857", "0896"];
+
+  function randomPhone() {
+    return phones[Math.floor(Math.random()*phones.length)] +
+           "****" +
+           Math.floor(1000 + Math.random()*9000);
+  }
+
+  function randomMinutes() {
+    return Math.floor(Math.random() * 6) + 1; // 1–6 menit
+  }
+
+  function showNotif() {
+    box.innerHTML = `
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+      <div>
+        ${randomPhone()} telah melakukan konsultasi
+        <small>${randomMinutes()} menit yang lalu</small>
+      </div>
+    `;
+
+    box.classList.add("show");
+
+    setTimeout(() => {
+      box.classList.remove("show");
+    }, 4200);
+  }
+
+  function loop() {
+    const hour = new Date().getHours();
+    const delay = hour >= 8 && hour <= 21
+      ? 120000  // siang: 2 menit
+      : 300000; // malam: 5 menit
+
+    showNotif();
+    setTimeout(loop, delay);
+  }
+
+  setTimeout(loop, 8000);
+})();
+</script>
+  <!-- ======================================================================================= -->
+                                      <!-- AKHIR SCRIPT  -->
+  <!-- ======================================================================================= -->
+   <footer>
+    © 2025 AYMN Gold · Hak Cipta Dilindungi
+  </footer>
 </body>
 </html>
-
-
-
-
-
-
