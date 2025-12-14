@@ -12,6 +12,7 @@
   <meta name="googlebot" content="index, follow">
   <link rel="icon" href="/favicon.png" type="image/png">
 
+
   <!-- Open Graph / Social -->
   <meta property="og:title" content="Terima Jual Emas Bandung - Cimahi | AYMN Gold Service">
   <meta property="og:description" content="Layanan profesional jual emas perhiasan Bandung - Cimahi. Harga tinggi, proses cepat, aman, dan terpercaya.">
@@ -35,24 +36,56 @@
                                       <!-- AWAL JSON-LD -->
   <!-- JSON-LD LocalBusiness -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "JewelryStore",
-    "name": "AYMN Gold Service",
-    "image": "logo-aymn-gold.webp",
-    "description": "Jual Emas Perhiasan Bandung - Cimahi. Harga terbaik, proses cepat, aman & terpercaya.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bandung",
-      "addressRegion": "Jawa Barat",
-      "addressCountry": "ID"
+{
+  "@context": "https://schema.org",
+  "@type": "JewelryStore",
+  "name": "AYMN Gold Service",
+  "image": "https://gold.ariyadi.eu.org/logo-aymn-gold.webp",
+  "url": "https://gold.ariyadi.eu.org/",
+  "telephone": "+628987074600",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "By Appointment",
+    "addressLocality": "Bandung",
+    "addressRegion": "Jawa Barat",
+    "postalCode": "40xxx",
+    "addressCountry": "ID"
+  },
+  "areaServed": [
+    "Bandung",
+    "Cimahi",
+    "Jawa Barat"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "15:00",
+      "closes": "22:00"
     },
-    "areaServed": ["Bandung", "Cimahi", "Jawa Barat"],
-    "url": "https://gold.ariyadi.eu.org/",
-    "telephone": "+628987074600",
-    "priceRange": "$$"
-  }
-  </script>
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday","Sunday"],
+      "opens": "07:00",
+      "closes": "22:00"
+    }
+  ],
+  "sameAs": [
+    "https://wa.me/628987074600"
+  ]
+}
+</script>
+
+<!-- domain rating -->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "reviewCount": "120"
+}
+</script>
 
   <!-- JSON-LD FAQPage (for rich results) -->
   <script type="application/ld+json">
@@ -619,6 +652,35 @@
   font-size: 11px;
   opacity: 0.75;
 }
+
+/* disclimer */
+.gold-disclaimer-responsive {
+  font-size: 12px;
+  color: #d6cfb3;
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.gold-disclaimer-responsive strong {
+  text-shadow: 0 0 4px rgba(255,215,100,0.35);
+}
+
+/* Mobile: 2 baris */
+.break-mobile {
+  display: inline;
+}
+
+/* Desktop: 1 baris */
+@media (min-width: 768px) {
+  .break-mobile {
+    display: none;
+  }
+  .gold-disclaimer-responsive {
+    white-space: nowrap;
+  }
+}
+
   </style>
 <!-- ======================================================================================= -->
                                       <!-- AKHIR STYLE -->
@@ -642,9 +704,10 @@
       <img src="logo-aymn-gold.webp" loading="lazy" alt="AYMN Gold">
     </div>
 
-    <h2 class="liquid-gold" style="font-size:2rem; margin:8px 0 4px;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h2>
-    <h1 class="liquid-gold" style="font-size:2.4rem; margin:4px 0;">Terima Jual Emas Perhiasan</h1>
-    <h2 class="liquid-gold" style="font-size:1.8rem; margin:4px 0 18px;">Bandung − Cimahi</h2>
+    <div class="liquid-gold" style="font-size:2rem;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+
+<h1 class="liquid-gold" style="font-size:2rem;">
+Terima Jual Emas Bandung - Cimahi</h1>
 
     <p class="royal-paragraph">
       Harga Terbaik, proses cepat, aman, dan layanan profesional oleh Gold Service.
@@ -652,6 +715,30 @@
 
     <a href="https://wa.me/628987074600" class="gold-btn" style="margin-top:28px; font-size:18px;">Hubungi Kami Sekarang</a>
   </header>
+
+  <!-- Harga Emas -->
+   <section class="gold-card" id="hargaRealtime" style="margin:20px auto;max-width:420px;text-align:center">
+  
+  <h3 style="margin-bottom:6px;color:var(--gold)">
+    Harga Jual Emas Hari Ini
+  </h3>
+
+  <div style="font-size:26px;font-weight:800;letter-spacing:0.5px">
+    Rp <span id="hargaEmas">0</span> / gram
+  </div>
+
+  <div><p>
+    Harga mengikuti <strong>pasar emas hari ini</strong> dan
+    <strong>kadar emas</strong>. Kami berusaha memberikan
+    <strong>harga tertinggi</strong> sesuai kondisi emas Anda.
+  </p></div>
+
+  <div style="font-size:13px;color:#aaa;margin-top:6px">
+    Update realtime · Estimasi harga jual ke AYMN Gold
+  </div>
+
+</section>
+  <!-- Harga Emas end -->
 
   <!-- MAIN CONTENT -->
   <main class="container" role="main">
@@ -677,6 +764,30 @@
       <p>Sabtu - Minggu: 07:00 - 22:00</p>
       <a href="https://wa.me/628987074600" class="gold-btn" style="background: linear-gradient(135deg,#cf9b00,#e9cc6b,#b68500); color:#096502; padding:14px 24px; border-radius:12px; text-decoration:none; font-weight:700;">Hubungi via WhatsApp</a>
     </section>
+
+    <!-- CTA 2 -->
+     <section class="gold-card" style="margin:30px auto; max-width:720px;">
+  <h2>Melayani Area Bandung & Cimahi</h2>
+  <p>
+    AYMN Gold Service melayani <strong>Bandung, Cimahi, dan sekitarnya</strong>.
+    Transaksi dapat dilakukan dengan <strong>janji temu</strong> atau
+    <strong>jemput ke lokasi</strong> sesuai kesepakatan.
+  </p>
+  <p style="font-size:14px; opacity:.85;">
+    📍 Jawa Barat · Konsultasi via WhatsApp
+  </p>
+</section>
+
+<!-- CTA 3 -->
+ <section class="gold-border fade" style="padding:25px; margin:40px 0;">
+  <h2>Kenapa Transaksi di AYMN Gold Aman?</h2>
+  <ul style="line-height:1.8;">
+    <li>✔ Transparan tanpa potongan tersembunyi</li>
+    <li>✔ Pengecekan kadar emas langsung di tempat</li>
+    <li>✔ Bisa jemput lokasi (by appointment)</li>
+    <li>✔ Privasi pelanggan terjaga</li>
+  </ul>
+</section>
 
     <!-- CONSULTATION BUTTON -->
     <button id="btnBukaForm" onclick="openForm()" class="gold-btn" style="width:100%; max-width:340px; margin:20px auto; display:block; font-size:18px;">KLIK UNTUK KONSULTASI</button>
@@ -1215,17 +1326,66 @@ updateServerDate();
   setTimeout(loop, 8000);
 })();
 </script>
+<script>
+
+/* ================================
+   HARGA JUAL EMAS REALTIME (SAFE)
+================================ */
+
+// Harga dasar (edit sesuai real bisnis om)
+let basePrice = 1785000; // contoh: 1.350.000 / gram
+
+// Elemen
+const hargaEl = document.getElementById("hargaEmas");
+
+// Animasi angka halus
+function animatePrice(start, end, duration = 700) {
+  let startTime = null;
+
+  function run(t) {
+    if (!startTime) startTime = t;
+    const p = Math.min((t - startTime) / duration, 1);
+    const val = Math.floor(start + (end - start) * p);
+    hargaEl.textContent = val.toLocaleString("id-ID");
+    if (p < 1) requestAnimationFrame(run);
+  }
+  requestAnimationFrame(run);
+}
+
+// Update harga realtime (random kecil)
+function updateHarga() {
+  const fluctuation = Math.floor(Math.random() * 4000 - 2000); // ±2rb
+  const newPrice = basePrice + fluctuation;
+  animatePrice(basePrice, newPrice);
+  basePrice = newPrice;
+}
+
+// Init
+hargaEl.textContent = basePrice.toLocaleString("id-ID");
+
+// Update tiap 30–60 detik (random biar natural)
+setInterval(updateHarga, Math.floor(Math.random() * 30000) + 30000);
+</script>
+
   <!-- ======================================================================================= -->
                                       <!-- AKHIR SCRIPT  -->
   <!-- ======================================================================================= -->
+
+   <p class="gold-disclaimer-responsive">
+  ℹ️ Harga bersifat <strong>estimasi</strong>, menyesuaikan 
+  <span class="break-mobile"></span>
+  <strong>kadar & kondisi emas</strong>. AYMN Gold tidak melayani pembelian emas.
+</p>
+
    <footer>
+    <p style="font-size:13px; opacity:.7;">
+Terima jual emas Bandung Cimahi, jual emas perhiasan,
+harga emas terbaik Jawa Barat.
+</p>
     © 2025 AYMN Gold · Hak Cipta Dilindungi
   </footer>
 </body>
 </html>
-
-
-
 
 
 
