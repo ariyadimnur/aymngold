@@ -681,6 +681,22 @@
   }
 }
 
+/* Live dot */
+@keyframes pulseDot {
+  0%   { opacity:.4; transform:scale(.85); }
+  50%  { opacity:1;  transform:scale(1); }
+  100% { opacity:.4; transform:scale(.85); }
+}
+
+.live-dot {
+  width:7px;
+  height:7px;
+  background:#f5d769;
+  border-radius:50%;
+  animation:pulseDot 1.6s ease-in-out infinite;
+}
+
+
   </style>
 <!-- ======================================================================================= -->
                                       <!-- AKHIR STYLE -->
@@ -722,6 +738,25 @@ Terima Jual Emas Bandung - Cimahi</h1>
   <h3 style="margin-bottom:6px;color:var(--gold)">
     Harga Jual Emas Hari Ini
   </h3>
+  <!-- Denyut -->
+  <div style="
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:4px 10px;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.4px;
+    border-radius:999px;
+    background:rgba(255,215,120,.12);
+    border:1px solid rgba(255,215,120,.35);
+    color:#f5d769;
+    margin-bottom:10px;
+">
+  <span class="live-dot"></span>
+  UPDATE HARI INI
+</div>
+
 
   <div style="font-size:26px;font-weight:800;letter-spacing:0.5px">
     Rp <span id="hargaEmas">0</span> / gram
@@ -1386,8 +1421,5 @@ harga emas terbaik Jawa Barat.
   </footer>
 </body>
 </html>
-
-
-
 
 
