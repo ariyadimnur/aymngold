@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://gold.ariyadi.eu.org/sitemap.xml
