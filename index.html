@@ -695,7 +695,124 @@
   border-radius:50%;
   animation:pulseDot 1.6s ease-in-out infinite;
 }
+/* Harga Emas */
+/* Harga Emas Box */
+.harga-emas-box {
+  margin: 20px auto;
+  max-width: 420px;
+  text-align: center;
+}
 
+/* Title */
+.harga-title {
+  margin-bottom: 6px;
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+/* Live Badge */
+.harga-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  border-radius: 999px;
+  background: rgba(255,215,120,0.12);
+  border: 1px solid rgba(255,215,120,0.35);
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+/* Live Dot */
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e; /* hijau live */
+  box-shadow:
+    0 0 6px rgba(34,197,94,0.9),
+    0 0 14px rgba(34,197,94,0.4);
+  animation: livePulse 1.4s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+}
+
+
+/* Harga Nominal */
+.harga-nominal {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 6px;
+  margin: 6px 0;
+}
+
+.harga-nominal .currency {
+  font-size: 14px;
+  color: #cfc6a8;
+  font-weight: 600;
+}
+
+.harga-nominal .amount {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: var(--gold);
+  text-shadow:
+    0 0 6px rgba(255,215,100,0.55),
+    0 0 14px rgba(255,215,100,0.25);
+}
+
+.harga-nominal .unit {
+  font-size: 13px;
+  color: #b8ae8a;
+  font-weight: 600;
+}
+
+/* Deskripsi */
+.harga-desc {
+  font-size: 13px;
+  color: #d6cfb3;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.harga-desc strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* Note */
+.harga-note {
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .harga-nominal .amount {
+    font-size: 24px;
+  }
+}
 
   </style>
 <!-- ======================================================================================= -->
@@ -733,47 +850,37 @@ Terima Jual Emas Bandung - Cimahi</h1>
   </header>
 
   <!-- Harga Emas -->
-   <section class="gold-card" id="hargaRealtime" style="margin:20px auto;max-width:420px;text-align:center">
-  
-  <h3 style="margin-bottom:6px;color:var(--gold)">
-    Harga Jual Emas Estimasi
-  </h3>
-  <!-- Denyut -->
-  <div style="
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    padding:4px 10px;
-    font-size:11px;
-    font-weight:600;
-    letter-spacing:.4px;
-    border-radius:999px;
-    background:rgba(255,215,120,.12);
-    border:1px solid rgba(255,215,120,.35);
-    color:#f5d769;
-    margin-bottom:10px;
-">
-  <span class="live-dot"></span>
-  UPDATE HARGA DISINI
-</div>
+<section class="gold-card harga-emas-box" id="hargaRealtime">
 
+  <h3 class="harga-title">Harga Jual Emas Hari Ini</h3>
 
-  <div style="font-size:26px;font-weight:800;letter-spacing:0.5px">
-    Rp <span id="hargaEmas">0</span> / gram
+  <!-- Badge Live -->
+  <div class="harga-badge-live">
+    <span class="live-dot"></span>
+    UPDATE HARI INI
   </div>
 
-  <div><p>
-    Harga mengikuti <strong>pasar emas hari ini</strong> dan
-    <strong>kadar emas</strong>. Kami berusaha memberikan
-    <strong>harga tertinggi</strong> sesuai kondisi emas Anda.
-  </p></div>
+  <!-- Harga -->
+  <div class="harga-nominal">
+    <span class="currency">Rp</span>
+    <span id="hargaEmas" class="amount">0</span>
+    <span class="unit">/ gram</span>
+  </div>
 
-  <div style="font-size:13px;color:#aaa;margin-top:6px">
+  <!-- Deskripsi -->
+  <p class="harga-desc">
+    Informasi harga <strong>ditujukan sebagai acuan jual emas</strong>.
+    Kami berupaya memberikan <strong>harga terbaik</strong>
+    sesuai kondisi emas Anda.
+  </p>
+
+  <!-- Note -->
+  <p class="harga-note">
     Update realtime · Estimasi harga jual ke AYMN Gold
-  </div>
+  </p>
 
 </section>
-  <!-- Harga Emas end -->
+<!-- Harga Emas end -->
 
   <!-- MAIN CONTENT -->
   <main class="container" role="main">
@@ -1421,6 +1528,3 @@ harga emas terbaik Jawa Barat.
   </footer>
 </body>
 </html>
-
-
-
